@@ -22,6 +22,7 @@
         android:contentDescription="@string/imageview_description"
         android:scaleType="fitStart"/>
     <TextView
+        android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/emojify_button"
@@ -36,10 +37,12 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/go"
+        android:onClick="emojifyMe"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/clear_button"
+        android:onClick="clearImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -50,13 +53,28 @@
         app:backgroundTint="@android:color/white"
         app:fabSize="mini"
         />
+
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/share_button"
+        android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/fab_margins"
+        android:layout_marginBottom="@dimen/fab_margins"
+        android:onClick="saveMe"
+        android:src="@drawable/ic_save"
+        android:visibility="gone"
+        app:backgroundTint="@android:color/white" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_button"
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="shareMe"
         android:layout_marginBottom="@dimen/fab_margins"
         android:layout_marginLeft="@dimen/fab_margins"
         android:layout_marginStart="@dimen/fab_margins"
